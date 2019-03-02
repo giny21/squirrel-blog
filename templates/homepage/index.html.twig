@@ -3,8 +3,5 @@
 {% block title %}Squirrel Blog{% endblock %}
 
 {% block body %}
-    <div class="container">
-        {{ include("homepage/header.html.twig", {"user": user, "header": header}) }}
-        {{ include("article/all.html.twig", {"articles": articles}) }}
-    </div>
+    {{ include("article/all.html.twig", {"articles": articles}) }}
 {% endblock %}

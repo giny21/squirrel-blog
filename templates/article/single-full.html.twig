@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Squirrel Blog - {{article.title}}{% endblock %}
+
+{% block body %}
+    <div class="article">
+        <div class="article__header">
+            <h3>{{article.title}}</h3>
+            <p>
+                Published at: {{article.publishAt|date('H:i:s d-m-Y')}}
+            </p>
+        </div>
+        <div class="article__content">
+            {{article.content | raw}}
+        </div>
+    </div>
+{% endblock %}

@@ -133,4 +133,13 @@ class Article
 
         return $this;
     }
+
+    public function isPublic(): bool
+    {
+        $currentDate = new \DateTime();
+        if($this->publishAt > $currentDate)
+            return false;
+        
+        return true;
+    }
 }
