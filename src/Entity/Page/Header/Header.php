@@ -37,6 +37,11 @@ class Header
      */
     private $headerAvatar;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $enabled;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -98,5 +103,17 @@ class Header
     public function getHeaderAvatarImage(): ?string
     {
         return $this->headerAvatar ? $this->headerAvatar->getImage() : null;
+    }
+
+    public function getEnabled(): ?bool
+    {
+        return $this->enabled;
+    }
+
+    public function setEnabled(bool $enabled): self
+    {
+        $this->enabled = $enabled;
+
+        return $this;
     }
 }
