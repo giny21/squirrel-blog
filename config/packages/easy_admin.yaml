@@ -7,15 +7,16 @@ easy_admin:
           - id
           - heroTitle
           - heroSubtitle
-          - { property: 'headerImageImage', type: 'image', base_path: '%app.page.header_image%' }
-          - { property: 'headerAvatarImage', type: 'image', base_path: '%app.page.header_avatar%' }
-      show:
-        fields:
-          - id
-          - heroTitle
-          - heroSubtitle
-          - { property: 'headerImageImage', type: 'image', base_path: '%app.page.header_image%' }
-          - { property: 'headerAvatarImage', type: 'image', base_path: '%app.page.header_avatar%' }
+          - { 
+            property: 'headerImageImage', 
+            type: 'image', 
+            base_path: '%app.page.header_image%' 
+            }
+          - { 
+            property: 'headerAvatarImage', 
+            type: 'image', 
+            base_path: '%app.page.header_avatar%' 
+            }
       form:
         fields:
           - heroTitle
@@ -33,41 +34,73 @@ easy_admin:
     
     HeaderImage:
       class: App\Entity\Page\Header\HeaderImage
+      label: Header Image
       list:
         fields:
           - id
-          - { property: 'image', type: 'image', base_path: '%app.page.header_image%' }
-      show:
-        fields:
-          - id
-          - { property: 'image', type: 'image', base_path: '%app.page.header_image%' }
+          - {
+            property: name,
+            type: 'string'
+            }
+          - { 
+            property: 'image', 
+            type: 'image', 
+            base_path: '%app.page.header_image%' 
+            }
       form:
         fields:
-          - { property: 'imageFile', type: 'vich_image' }
+          - { 
+            property: 'imageFile', 
+            type: 'vich_image' 
+            }
     
     HeaderAvatar:
       class: App\Entity\Page\Header\HeaderAvatar
+      label: Header Avatar
       list:
         fields:
           - id
-          - { property: 'image', type: 'image', base_path: '%app.page.header_avatar%' }
-      show:
-        fields:
-          - id
-          - { property: 'image', type: 'image', base_path: '%app.page.header_avatar%' }
+          - {
+            property: name,
+            type: 'string'
+            }
+          - { 
+            property: 'image', 
+            type: 'image', 
+            base_path: '%app.page.header_avatar%' 
+            }
       form:
         fields:
-          - { property: 'imageFile', type: 'vich_image' }
+          - { 
+            property: 'imageFile', 
+            type: 'vich_image' 
+            }
+
+    Article:
+      class: App\Entity\Page\Article\Article
+      list:
+        fields:
+          - id
+          - title
+          - createdAt
+          - updatedAt
+          - publishAt
+      form:
+        fields:
+          - title
+          - shortText
+          - { 
+            property: 'content', 
+            type: 'fos_ckeditor' 
+            }
+          - {
+            property: publishAt,
+            type: datetime
+            }
 
     User:
       class: App\Entity\User\User
       list:
-        fields:
-          - id
-          - username
-          - name
-          - surname
-      show:
         fields:
           - id
           - username
