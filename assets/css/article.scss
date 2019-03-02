@@ -1,5 +1,21 @@
 $el: "article";
 
+.#{$el}
+{
+    padding: 6px 12px;
+}
+    .#{$el}__header
+    {
+        > h3
+        {
+            margin: 0px;
+        }
+        > p
+        {
+            font-size: 70%;
+        }
+    }
+
 .#{$el}__short
 {
     margin-top: 10px;

@@ -1,3 +1,6 @@
+{% set user = getOwner() %}
+{% set header = getEnabled() %}
+
 <header>
     <div class="header__user">
         <div class="header__user-avatar" style="background-image: url('{{ vich_uploader_asset(header.headerAvatar, 'imageFile') }}')">
@@ -7,9 +10,11 @@
         </div>
     </div>
     <div class="header__content" style="background-image: url('{{ vich_uploader_asset(header.heroImage, 'imageFile') }}')">
-        <div class="header__content-wrapper">
-            <h1>{{header.heroTitle}}</h1>
-            <h2>{{header.heroSubtitle}}</h2>
-        </div>
+        <a href="{{path('homepage')}}">
+            <div class="header__content-wrapper">
+                <h1>{{header.heroTitle}}</h1>
+                <h2>{{header.heroSubtitle}}</h2>
+            </div>
+        </a>
     </div>
 </header>
