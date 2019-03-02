@@ -84,6 +84,11 @@ class HeaderImage
         return $this;
     }
 
+    public function getName()
+    {
+        return self::__toString();
+    }
+
     public function __toString()
     {
         return $this->getImage() ? $this->getImage() : "";
