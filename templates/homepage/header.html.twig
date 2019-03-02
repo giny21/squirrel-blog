@@ -1,0 +1,15 @@
+<header>
+    <div class="header__user">
+        <div class="header__user-avatar" style="background-image: url('{{ vich_uploader_asset(header.headerAvatar, 'imageFile') }}')">
+        </div>
+        <div class="header__user-name">
+            <span>{{user.name}}</span> <span>{{user.surname}}</span>
+        </div>
+    </div>
+    <div class="header__content" style="background-image: url('{{ vich_uploader_asset(header.heroImage, 'imageFile') }}')">
+        <div class="header__content-wrapper">
+            <h1>{{header.heroTitle}}</h1>
+            <h2>{{header.heroSubtitle}}</h2>
+        </div>
+    </div>
+</header>

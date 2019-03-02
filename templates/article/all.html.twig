@@ -1,0 +1,9 @@
+<div class="container__content-wrapper">
+    {% if articles and articles|length > 0 %}
+        {% for article in articles %}
+            {{ include("article/single-short.html.twig", {"article": article}) }}
+        {% endfor %}
+    {% else %}
+        NO PUBLISHED ARTICLES FOUND
+    {% endif %}
+</div>

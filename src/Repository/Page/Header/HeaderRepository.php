@@ -19,32 +19,13 @@ class HeaderRepository extends ServiceEntityRepository
         parent::__construct($registry, Header::class);
     }
 
-    // /**
-    //  * @return Header[] Returns an array of Header objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findEnabled()
     {
         return $this->createQueryBuilder('h')
-            ->andWhere('h.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('h.id', 'ASC')
-            ->setMaxResults(10)
+            ->where('h.enabled = 1')
+            ->orderBy('h.id', 'DESC')
+            ->setMaxResults(1)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getSingleResult();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Header
-    {
-        return $this->createQueryBuilder('h')
-            ->andWhere('h.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

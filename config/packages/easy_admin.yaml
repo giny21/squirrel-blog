@@ -17,6 +17,7 @@ easy_admin:
             type: 'image', 
             base_path: '%app.page.header_avatar%' 
             }
+          - enabled
       form:
         fields:
           - heroTitle
@@ -31,6 +32,7 @@ easy_admin:
             type: 'easyadmin_autocomplete', 
             type_options: { class: 'App\Entity\Page\Header\HeaderAvatar' }
             }
+          - enabled
     
     HeaderImage:
       class: App\Entity\Page\Header\HeaderImage

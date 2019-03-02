@@ -1,0 +1,24 @@
+$el: "article";
+
+.#{$el}__short
+{
+    margin-top: 10px;
+    border-bottom: 1px black dashed;
+    padding: 0px 12px 10px;
+
+    &:last-child
+    {
+        border-bottom: none;
+    }
+}
+    .#{$el}__short_text
+    {
+        margin: 5px 0px 7px 0px;
+    }
+    .#{$el}__short_footer
+    {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    

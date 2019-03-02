@@ -1,0 +1,11 @@
+$el: "container";
+
+.#{$el}
+{
+    max-width: 1024px;
+    min-height: 150px;
+}
+
+    .#{$el}__content-wrapper
+    {
+    }
